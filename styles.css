@@ -1,0 +1,159 @@
+body {
+  /* Add other styles as needed */
+  /* For example, you can set the height to 100vh to make the background cover the entire viewport */
+  /* height: 100vh; */
+  margin: 0;
+  overflow: hidden; /* Ensure that the blur effect doesn't overflow */
+}
+
+/* Apply backdrop filter to the body for the blur effect */
+body::before {
+  content: "";
+  background-image: url('VoidBackground1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Ensures that the background stays fixed while scrolling */
+  filter: blur(5px); /* Adjust the blur amount as needed */
+  -webkit-backdrop-filter: blur(5px); /* For some older versions of browsers */
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Add this line to stack elements vertically */
+  height: 100vh;
+  position: relative;
+}
+
+/* Pink "V" in the top left corner with drop shadow */
+.v-text {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 60px;
+  font-family: myFont2;
+  font-weight: bold;
+  color: pink;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  cursor: pointer; /* Add this to show pointer cursor on hover */
+  transition: transform 0.2s ease; /* Add this for smooth expansion effect */
+}
+
+.v-text:hover {
+  transform: scale(1.1); /* Make it expand on hover */
+}
+
+/* Fade-in text styles */
+.fade-in-text {
+  opacity: 0;
+  transform: translateY(-100px);
+  font-size: 60px;
+  font-family: myFont2;
+  font-weight: bold;
+  text-shadow: 8px 2px 4px rgba(0, 0, 0, 0.3);
+  color: rgb(255, 255, 255);
+  animation: fadeInAndFly 2s ease-in-out forwards;
+}
+
+.with-void-text {
+  opacity: 0;
+  transform: translateY(-100px);
+  font-size: 60px;
+  font-family: myFont2;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: rgb(255, 255, 255);
+  animation: fadeInAndFly 2s ease-in-out forwards;
+}
+
+/* Discord button styles */
+.discord-button {
+  position: fixed;
+  top: 20px;
+  left: 1600px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: white;
+  font-size: 30px;
+  font-family: myFont2;
+  text-decoration: none;
+  z-index: 1;
+  transition: transform 0.2s ease;
+  animation: fadeInAndFly 2s ease-in-out forwards;
+}
+
+.discord-button:hover {
+  /* Change the scale to make it expand */
+  transform: scale(1.1);
+}
+
+/* Keyframes for the animation */
+@keyframes fadeInAndFly {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@font-face {
+  font-family: myFont;
+  src: url(bad.ttf);
+}
+
+@font-face {
+  font-family: myFont2;
+  src: url(Font.ttf);
+}
+
+.version-button {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: -10px;
+  padding: 8px 20px;
+  border-radius: 10px; /* Adjust the value for less rounded corners */
+  font-size: 24px;
+  font-family: myFont2;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(190, 55, 223);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  animation: fadeInAndFly 2s ease-in-out forwards;
+}
+
+.version-button:hover {
+  background-color: #bb44b5; /* Lighter pink on hover */
+}
+
+.donate-button {
+  position: fixed;
+  top: 20px;
+  left: 1425px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: white;
+  font-size: 30px;
+  font-family: myFont2;
+  text-decoration: none;
+  z-index: 1;
+  transition: transform 0.2s ease;
+  animation: fadeInAndFly 2s ease-in-out forwards;
+}
+
+.donate-button:hover {
+  transform: scale(1.1);
+}
